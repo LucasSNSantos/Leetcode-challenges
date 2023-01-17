@@ -22,7 +22,16 @@ namespace LeetCodeSolutions.Solutions
             for(int i = 0; i < numbers.Length;i++)
             {
                 int digit = ConvertRomanToArabic(numbers[i]);
-                finalNumber += digit;
+                if(i > 0 )
+                {
+                    int offSet = CheckNumeralBehind(numbers[i], numbers[i - 1]);
+                    finalNumber += digit + offSet;
+                }
+                else
+                {
+                    finalNumber += digit;
+                }
+                
             }
 
             return finalNumber;
@@ -30,10 +39,44 @@ namespace LeetCodeSolutions.Solutions
 
 
 
-        private int RomanNumeralsSubtractions(char romanNumeral)
+        private int CheckNumeralBehind(char current, char last)
         {
-            return 0;
+
+            switch (last)
+            {
+                case 'I':
+                    if (current == 'V' || current == 'X')
+                    {
+                        return -2;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                case 'X':
+                    if (current == 'L' || current == 'C')
+                    {
+                        return -20;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+                case 'C':
+                    if (current == 'D' || current == 'M')
+                    {
+                        return -200;
+                    }
+                    else
+                    {
+                        return 0;
+                    }
+               default: return 0;
+            }
         }
+
+
+      
 
 
         private int ConvertRomanToArabic(char romanNumeral)
