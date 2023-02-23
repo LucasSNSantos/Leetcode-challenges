@@ -7,8 +7,10 @@ public class Program
 
     public static void Main(string[] args)
     {
-        SolutionRomanNumbers solution = new SolutionRomanNumbers();
-        int number = solution.RomanToInt("MCMXCIV"); 
-        Console.WriteLine(number);
+        SolutionCommonPrefix solution = new SolutionCommonPrefix();
+
+        string answer = solution.LongestCommonPrefix(new string[]{"ab","a"});
+        Console.WriteLine(answer);
+
     }
 }

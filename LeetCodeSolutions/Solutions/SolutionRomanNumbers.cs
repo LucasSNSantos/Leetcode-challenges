@@ -37,8 +37,6 @@ namespace LeetCodeSolutions.Solutions
             return finalNumber;
         }
 
-
-
         private int CheckNumeralBehind(char current, char last)
         {
 
@@ -74,10 +72,6 @@ namespace LeetCodeSolutions.Solutions
                default: return 0;
             }
         }
-
-
-      
-
 
         private int ConvertRomanToArabic(char romanNumeral)
         {

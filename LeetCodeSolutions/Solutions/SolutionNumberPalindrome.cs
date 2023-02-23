@@ -6,7 +6,13 @@ using System.Threading.Tasks;
 
 namespace LeetCodeSolutions.Solutions
 {
-    internal class SolutionNumberPalindrome
+    public class SolutionNumberPalindrome
     {
+        public bool IsPalindrome(int x)
+        {
+            string stringfiedNumber = x.ToString();
+            string reversedStringfiedNumber = new string(x.ToString().Reverse().ToArray());
+            return stringfiedNumber == reversedStringfiedNumber;
+        }
     }
 }
